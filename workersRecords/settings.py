@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'workersRecords.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pawad_workersrecords',
+        'USER': 'root',
+        'PASSWORD': 'betamysql',
+        'HOST': '172.200.200.9',
+        'PORT': '',
     }
 }
 

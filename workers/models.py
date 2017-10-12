@@ -3,11 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django import forms
-from settings.models import (
-    Department,
-    maritalStatus,
-    bloodType
-)
+from settings.models import (Department)
 
 from systems.models import (
     Systems,
@@ -32,11 +28,7 @@ class Worker (models.Model):
     department = models.ForeignKey(Department)
     homePhone = models.CharField(max_length=20)
     celPhone = models.CharField(max_length=20)
-    maritalStatus = models.ForeignKey(maritalStatus)
-    sonsQty = models.PositiveIntegerField()
-    birthDate = models.DateField()
     birthPlace = models.CharField(max_length=60)
-    bloodType = models.ForeignKey(bloodType)
     systemsAssigned = models.ManyToManyField(Systems, blank=True)
     computerAssigned = models.ManyToManyField(Computers, blank=True)
     fleetAssigned = models.ForeignKey(Fleet, blank=True)

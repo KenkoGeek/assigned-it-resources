@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row sheet-top">
+				<div class="col-md-4">
+          <img width="150px" class="sheet-logo" src="{% static 'img/logoPAWA.png' %}" alt="">
+				</div>
+				<div class="col-md-8 sheet-title-div">
+          <h4 class="sheet-title">Formulario de asignación de recursos TI</h4>
+				</div>
+			</div>
+			<div class="row">
+        <div class="col-md-8">
+          <h4 text-align="center">Información Personal</h4>
+          <table class="table table-striped">
+            <tr>
+              <td><label for="completeName">Nombre completo:</label> {{ object.firstNames }} {{ object.lastNames }}</td>
+            </tr>
+            <tr>
+              <td>
+                <label for="department">Departamento:</label> {{ object.department|first }}
+              </td>
+            </tr>
+            <tr>
+              <td><label for="homePhone">Teléfono</label> {{ object.homePhone }}</td>
+            </tr>
+            <tr>
+              <td><label for="celPhone">Celular:</label> {{ object.celPhone }}</td>
+            </tr>
+            <tr>
+              <td><label for="birthPlace">Lugar de nacimiento:</label> {{ object.birthPlace }}</td>
+            </tr>
+          </table>
+        </div>
+				<div class="col-md-4">
+          <img src="{{STATIC_DIRS}}{{ object.photo }}" alt="">
+					<h4>{{STATIC_DIRS}}{{ object.photo }}</h4>
+				</div>
+			</div>
+      <hr />
+			<div class="row">
+				<div class="col-md-12">
+
+          <h4>Accesos a plataformas o sistemas</h4>
+          <table class="table table-striped">
+
+            {% for system in object.systemsAssigned.all %}
+             <tr>
+              <td>
+                <label for="SystemName">{{ system.systemName }}</label> {{ system.systemModules }}
+              </td>
+             </tr>
+            {% endfor %}
+          </table>
+					<hr />
+					<h4>Recursos asignados</h4>
+					<table class="table table-striped">
+						{% for computer in object.computerAssigned.all %}
+            <tr>
+              <td><label for="computador">Computador: </label> {{ computer.computersType }}</td>
+            </tr>
+					{% endfor %}
+					<tr>
+						<td><label for="flota">Flota:</label> {{ object.fleetAssigned }}</td>
+					</tr>
+						<tr>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<!-- <div class="col-md-12 sheet-sub-footer"> -->
+          <table class="table table-bordered" >
+            <tr>
+              <td>1</td>
+              <td></td>
+              <td>3</td>
+            </tr>
+          </table>
+				<!-- </div> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

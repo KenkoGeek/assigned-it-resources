@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Departamento</th>
+  </tr>
+  {% if object_list %}
+   {% for worker in object_list %}
+   <tr>
+     <td>{{ worker.firstNames }}</td>
+     <td>{{ worker.lastNames }}</td>
+     <td>{{ worker.department }}</td>
+   </tr>
+   {% endfor %}
+</table>
+  {% else %}
+     <p>No hay registros</p>
+  {% endif %}
+
+{% endblock %}

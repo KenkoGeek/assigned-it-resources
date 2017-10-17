@@ -10,10 +10,3 @@ class computerType (models.Model):
 
     def __str__(self):
         return self.computersType
-
-class Computers (models.Model):
-    computersName = models.CharField(max_length=40)
-    typeName = models.ForeignKey(computerType)
-
-    def __str__(self):
-        return '{}, {}'.format(self.typeName, self.computersName)

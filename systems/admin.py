@@ -15,7 +15,7 @@ class systemsAdmin(admin.ModelAdmin):
 
 class modulesAdmin(admin.ModelAdmin):
     model = Modules
-    list_display = ('moduleName',)
+    list_display = ('moduleName','moduleDesc','permission')
     # list_display_links = ('moduleName', 'permission')
 
 class permissionAdmin(admin.ModelAdmin):

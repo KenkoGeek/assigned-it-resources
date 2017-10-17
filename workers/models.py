@@ -11,10 +11,7 @@ from systems.models import (
     Permissions
 )
 
-from equipments.models import (
-    Computers,
-    computerType
-)
+from equipments.models import computerType
 
 from fleet.models import (Fleet)
 
@@ -22,13 +19,13 @@ from fleet.models import (Fleet)
 
 class Worker (models.Model):
     idNumber = models.CharField(max_length=40, unique=True)
-    photo = models.ImageField(upload_to='photos/', name=None)
+    photo = models.ImageField(upload_to='workers/photos/', name=None)
     firstNames = models.CharField(max_length=80)
     lastNames = models.CharField(max_length=80)
     department = models.ForeignKey(Department)
     homePhone = models.CharField(max_length=20)
     celPhone = models.CharField(max_length=20)
     birthPlace = models.CharField(max_length=60)
-    systemsAssigned = models.ManyToManyField(Systems, blank=True)
-    computerAssigned = models.ManyToManyField(Computers, blank=True)
-    fleetAssigned = models.ForeignKey(Fleet, blank=True)
+    systemsAssigned = models.ManyToManyField(Systems, blank=True, null=True)
+    computerAssigned = models.ManyToManyField(computerType, blank=True, null=True)
+    fleetAssigned = models.ForeignKey(Fleet, blank=True, null=True)

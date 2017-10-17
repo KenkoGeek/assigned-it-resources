@@ -25,7 +25,7 @@ class Modules (models.Model):
     permission = models.ForeignKey(Permissions)
 
     def __str__(self):
-        return "Permisos de "+"{} en modulo {}".format(self.permission, self.moduleName)
+        return "{} / {}".format(self.permission, self.moduleName)
 
 
 class Systems (models.Model):

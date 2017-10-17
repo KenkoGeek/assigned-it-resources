@@ -1,10 +1,10 @@
-/*Main Header*/
-.navbar{border-radius: 0;}
-.admin-ppal{margin-right: 5px;}
 
-/*Individual View to PDF export */
-.sheet-title-div{height: 100px; text-align: center;}
-.sheet-title{margin-top: 5.5%;}
+.navbar{border-radius: 0}
+.admin-ppal{margin-right: 5px}
+
+
+.sheet-title-div{height: 100px; text-align: center}
+.sheet-title{margin-top: 5.5%}
 .sheet-logo{display: block;margin: auto; padding: 10px}
 .sheet-top{border: 2px solid #000; margin-bottom:30px}
 .sheet-footer{border-style: solid; margin-top: 30px}

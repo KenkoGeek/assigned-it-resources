@@ -21,9 +21,12 @@
             <tr>
               <td><label for="completeName">Nombre completo:</label> {{ object.firstNames }} {{ object.lastNames }}</td>
             </tr>
+						<tr>
+							<td><label for="idNumber">Número de cédula o pasaporte:</label> {{ object.idNumber }}</td>
+						</tr>
             <tr>
               <td>
-                <label for="department">Departamento:</label> {{ object.department|first }}
+                <label for="department">Departamento:</label> {{ object.department }}
               </td>
             </tr>
             <tr>
@@ -38,8 +41,8 @@
           </table>
         </div>
 				<div class="col-md-4">
-          <img src="{{STATIC_DIRS}}{{ object.photo }}" alt="">
-					<h4>{{STATIC_DIRS}}{{ object.photo }}</h4>
+          <img src="{{ object.photo.url }}" alt="">
+					<h4>{{STATIC_URL}}{{ object.photo }}</h4>
 				</div>
 			</div>
       <hr />

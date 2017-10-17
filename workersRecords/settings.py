@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # 'records',
     'systems',
     'workers',
+    'xhtml2pdf',
 ]
 
 MIDDLEWARE = [

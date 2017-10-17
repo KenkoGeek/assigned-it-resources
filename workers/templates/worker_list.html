@@ -7,6 +7,7 @@
     <th>Apellidos</th>
     <th>Departamento</th>
     <th></th>
+    <th></th>
   </tr>
   {% if object_list %}
    {% for worker in object_list %}
@@ -16,6 +17,7 @@
      <td>{{ worker.lastNames }}</td>
      <td>{{ worker.department }}</td>
      <td><a class="btn btn-primary" href="{% url 'worker_view' worker.id  %}">Ver</a></td>
+     <td><a class="btn btn-primary" href="{% url 'generate_pdf' worker.id  %}">PDF</a></td>
    </tr>
    {% endfor %}
 </table>

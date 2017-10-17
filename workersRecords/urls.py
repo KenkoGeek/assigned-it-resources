@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from workers import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^workers/', include('workers.urls')),
@@ -23,4 +25,4 @@ urlpatterns = [
     url(r'^jet/', include('jet.urls', 'jet')),
     url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     url(r'^admin/', admin.site.urls),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

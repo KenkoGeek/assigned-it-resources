@@ -19,7 +19,7 @@ from fleet.models import (Fleet)
 
 class Worker (models.Model):
     idNumber = models.CharField(max_length=40, unique=True)
-    photo = models.ImageField(upload_to='workers/photos/', name=None)
+    photo = models.ImageField(upload_to='STATIC_URL/photos/', name=None)
     firstNames = models.CharField(max_length=80)
     lastNames = models.CharField(max_length=80)
     department = models.ForeignKey(Department)

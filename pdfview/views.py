@@ -12,7 +12,7 @@ class PDFViewMixin(object):
     a PDF using xhtml2pdf/pisa.
     """
     font_path = "{0}/fonts".format(os.path.dirname(os.path.abspath(__file__)))
-    template_name = 'templates/main.html'  # extend this
+    template_name = 'pdfview/base.html'  # extend this
 
     def get_filename(self):
         return "{cls}-{pk}.pdf".format(

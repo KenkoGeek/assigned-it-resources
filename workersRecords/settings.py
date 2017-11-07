@@ -35,10 +35,12 @@ INSTALLED_APPS = [
     'jet',
     'django.contrib.admin',
     'django.contrib.auth',
+    'menu',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_feedparser',
     'settings',
     'equipments',
     'fleet',
@@ -81,7 +83,7 @@ WSGI_APPLICATION = 'workersRecords.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
+'django_feedparser',
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -133,3 +135,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+LOGIN_URL = '/admin/login/'
+
+LOGIN_REDIRECT_URL = '/user/accounts/'

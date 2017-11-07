@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from workers import views
+from workers.views import Index
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    url(r'^$', Index.as_view(), name='index'),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^workers/', include('workers.urls')),
     # url(r'^list/$', views.worker_list, name='workers-list'),
     url(r'^jet/', include('jet.urls', 'jet')),

@@ -1,14 +1,16 @@
-{% load staticfiles %}
-{% load static %}
+{% extends "pdfview/base.html" %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>PDF</title>
+    {% block css %}
+    {{ block.super }}
     <style>
 
-
     </style>
+    {% endblock css %}
   </head>
   <body>
     {% block content %}
@@ -29,7 +31,7 @@
               <h4 text-align="center">Información Personal</h4>
               <table class="table table-striped">
                 <tr>
-                  <td><label for="completeName">Nombre completo:</label> {{ object.firstNames }} {{ myVar2 }}</td>
+                  <td><label for="completeName">Nombre completo:</label> {{ object.pk }} {{ object.lastNames }}</td>
                 </tr>
     						<tr>
     							<td><label for="idNumber">Número de cédula o pasaporte:</label> {{ object.idNumber }}</td>
